@@ -1,12 +1,12 @@
 {
-  "rewrite": [
-  {
-    "source": "/api/:match",
-    "destination":"https://eventease-server-1.onrender.com/api/:match"
-  },
-  {
-    "source": "/(.*)",
+  "rewrites": [
+    {
+      "source": "/api/:match",
+      "destination": "https://eventease-server-1.onrender.com/api/:match"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/"
-  }
-]
+    }
+  ]
 }
