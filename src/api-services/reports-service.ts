@@ -2,11 +2,11 @@ import axios from "axios";
 const APIBASEURL = import.meta.env.VITE_API_BASE_URL || "";
 
 export const getAdminReports = async (data: any) => {
-  const response = await axios.post(`${APIBASEURL}/reports/get-admin-reports`, data);
+  const response = await axios.post(`${APIBASEURL}/api/reports/get-admin-reports`, data);
   return response.data;
 };
 
 export const getUserReports = async () => {
-  const response = await axios.get(`${APIBASEURL}/reports/get-user-reports`);
+  const response = await axios.get(`${APIBASEURL}/api/reports/get-user-reports`);
   return response.data;
 };
