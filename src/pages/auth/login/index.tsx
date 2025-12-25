@@ -4,7 +4,7 @@ import { message } from 'antd';
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { loginUser } from "../../../api-services/users-services";
-import Cookies from "js-cookie";
+
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);

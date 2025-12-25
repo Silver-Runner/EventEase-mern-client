@@ -12,7 +12,9 @@ export const loginUser = async (data: never) => {
 };
 
 export const getCurrentUser = async () => {
-  const response = await axios.get(`${APIBASEURL}/api/users/current-user`)
+  const response = await axios.get(`${APIBASEURL}/api/users/current-user`, {
+    withCredentials: true,
+  });
   return response.data;
 }
 
