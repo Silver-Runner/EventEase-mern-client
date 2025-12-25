@@ -14,7 +14,6 @@ const LoginPage = () => {
       setLoading(true);
       const response = await loginUser(values);
       message.success(response.message);
-      // Cookies.set("token", response.token);
       navigate("/");
     } catch (error: any) {
       message.error(error.response?.data.message || error.message)
