@@ -14,7 +14,7 @@ function ReportCard({
       <h1 className="text-sm font-bold">{title}</h1>
       <p className="text-sm text-gray-500">{description}</p>
       <h1 className="text-4xl font-bold">
-        {isAmountProperty ? `$${value}` : value}
+        {isAmountProperty ? `$${value ?? 0}` : value}
       </h1>
     </div>
   );
