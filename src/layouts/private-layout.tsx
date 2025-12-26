@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Sidebar from "./sidebar";
