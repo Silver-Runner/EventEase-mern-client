@@ -28,7 +28,7 @@ function PrivateLayout({children}:{
   };
 
   useEffect(() => {
-    const token = Cookies.get("token");
+    const token = localStorage.getItem("token");
     if (!token) {
       navigate("/login");
     } else {

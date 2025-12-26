@@ -5,7 +5,6 @@ import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { loginUser } from "../../../api-services/users-services";
 
-
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -14,6 +13,7 @@ const LoginPage = () => {
       setLoading(true);
       const response = await loginUser(values);
       message.success(response.message);
+      localStorage.setItem("token", response.token);
       navigate("/");
     } catch (error: any) {
       message.error(error.response?.data.message || error.message)

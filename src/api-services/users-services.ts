@@ -13,17 +13,27 @@ export const loginUser = async (data: never) => {
 
 export const getCurrentUser = async () => {
   const response = await axios.get(`${APIBASEURL}/api/users/current-user`, {
-    withCredentials: true,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
   });
   return response.data;
-}
+};
 
 export const getAllUsers = async () => {
-  const response = await axios.get(`${APIBASEURL}/api/users/get-all-users`);
+  const response = await axios.get(`${APIBASEURL}/api/users/get-all-users`, {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
+  },
+});
   return response.data;
 }
 
 export const updateUserData = async (data: any) => {
-  const response = await axios.put(`${APIBASEURL}/api/users/update-user`, data);
+  const response = await axios.put(`${APIBASEURL}/api/users/update-user`, data, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
   return response.data;
 }
